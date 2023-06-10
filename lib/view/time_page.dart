@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_timer_countdown/flutter_timer_countdown.dart';
 
@@ -8,15 +7,17 @@ class TimerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Timer"),),
+      appBar: AppBar(
+        title: const Text("Timer"),
+      ),
       body: Row(
         children: [
           const Text("Shuncha vaqt qoldi"),
           TimerCountdown(
-            minutesDescription: "",
-            secondsDescription: "",
+            enableDescriptions: false,
             format: CountDownTimerFormat.minutesSeconds,
-            endTime: DateTime.now().add(const Duration(minutes: 1, seconds: 30)),
+            endTime:
+                DateTime.now().add(const Duration(minutes: 1, seconds: 30)),
             onEnd: () {
               debugPrint("Hello");
             },
